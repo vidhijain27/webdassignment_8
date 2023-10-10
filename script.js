@@ -14,7 +14,7 @@ function callvariables() {
 var firstcheck = 0, lastcheck = 0, phonecheck = 0, emailcheck = 0, passcheck= 0;
 
 function checkvariables(){
-      var atvalue=0, atindex= 0, dotvalue= 0, uppercase= 0, numeric= 0, passdigits=0, phonedigit=0;
+      var atindex= 0, uppercase= 0, numeric= 0, passdigits=0, phonedigit=0;
 
       if (firstname != ""){
         firstcheck=1;
@@ -25,22 +25,6 @@ function checkvariables(){
       
       if ((phoneno.length==10)&&(phoneno.charAt(0) != 0)){
         phonecheck=1;
-      }
-
-      for(let i=0; i<=email.length; i++){
-        if(email.charAt(i)=='@'){
-            atvalue++;
-            atindex = i;
-        }
-      }
-      for (let j=atindex; j<=email.length; j++){
-        if(email.charAt(j)=='.'){
-            dotvalue++;
-        }
-      }
-
-      if ((atvalue==1)&&(dotvalue==1)){
-        emailcheck=1;
       }
 
       for(let k = 0; k<=password.length;k++){
@@ -64,9 +48,6 @@ function checkvariables(){
       }
       if (phonecheck==0){
         alert("Enter a valid Phone No.")
-      }
-      if (emailcheck==0){
-        alert("Enter a valid email id")
       }
       if (passcheck==0){
         alert("Enter a valid password. Use a uppercase and a numeric value")
